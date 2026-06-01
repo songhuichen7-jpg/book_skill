@@ -1,0 +1,11 @@
+/* 渲染期强制字体，避免 headless chromium 把中文回退成衬线 */
+svg text,
+.nodeLabel, .edgeLabel, .cluster-label, .label,
+.nodeLabel *, .edgeLabel * {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", sans-serif !important;
+}
+/* 边标签：白底、墨字，去掉默认的淡色块 */
+.edgeLabel, .edgeLabel rect { fill: #FFFFFF; background-color: #FFFFFF; }
+.edgeLabel, .edgeLabel span, .edgeLabel p { color: #191919; }
+/* 容器标题留点呼吸 */
+.cluster-label { font-weight: 600; }

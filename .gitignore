@@ -1,0 +1,18 @@
+# 依赖与渲染引擎（用户自行 `cd tools && npm install` 安装；含 chromium，体积大）
+tools/node_modules/
+
+# 系统/缓存垃圾
+.DS_Store
+**/.DS_Store
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# 生成产物（示例/调试时可能落在 skill 目录里的临时文件）
+*.pdf
+*.png
+!styles/**/*.png
+
+# npm 安装日志
+tools/install.log
+tools/*.log

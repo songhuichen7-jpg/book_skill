@@ -1,0 +1,39 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "PingFang SC, Hiragino Sans GB, Helvetica Neue, sans-serif",
+    "fontSize": "16px",
+    "primaryTextColor": "#191919",
+    "lineColor": "#7A7268",
+    "edgeLabelBackground": "#FFFFFF",
+    "clusterBkg": "#F6F4EF",
+    "clusterBorder": "#C9C2B4"
+  },
+  "flowchart": { "curve": "basis", "padding": 16, "nodeSpacing": 50, "rankSpacing": 58 }
+}}%%
+flowchart LR
+  %% ↑ 方向可改：LR 横排 / TB 竖排。这是「图的语言」——比手摆坐标强，自动布局。
+  %% 形状：([圆角])  [方角]  {{六边形}}  ([状态])  {菱形判断}
+  %% 边：A --> B 实线；A ==> B 粗实线；A -. 标签 .-> B 虚线带标签
+  %% 分组：subgraph G["组名"] ... end  （用来表达"阶段/层/子系统"）
+
+  subgraph G["示例分组"]
+    direction LR
+    A(["节点 A"]) ==> B(["节点 B"])
+  end
+  B ==> C(["节点 C"])
+  X{{"并行/旁路节点"}}
+  X -. 关系标签 .-> A
+
+  %% —— 多彩配色：给节点套下面任一 class（pastel 填充 + 书内强调色描边）——
+  classDef c1 fill:#ECEAF7,stroke:#827DBD,color:#191919;
+  classDef c2 fill:#FBEAE3,stroke:#D97757,color:#191919;
+  classDef c3 fill:#E6F0EA,stroke:#609A81,color:#191919;
+  classDef c4 fill:#E5EDF2,stroke:#5E7E96,color:#191919;
+  classDef c5 fill:#F5EDDA,stroke:#C2913B,color:#191919;
+  classDef c6 fill:#F3E5E1,stroke:#C2766A,color:#191919;
+  classDef neutral fill:#EFEDE8,stroke:#6B6B6B,color:#191919;
+  class A c2;
+  class B c1;
+  class C c3;
+  class X neutral;

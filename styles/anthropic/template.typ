@@ -193,7 +193,7 @@
     },
   )
   set text(font: sans, size: 9.5pt, fill: ink, lang: "zh", region: "cn")
-  set par(justify: true, leading: 0.82em, spacing: 1.1em)
+  set par(justify: true, leading: 1.0em, spacing: 1.4em)
 
   // 编辑式表格：无竖线、强调色加粗表头 + 表头下细线、行间淡发丝线
   set table(

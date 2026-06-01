@@ -16,3 +16,7 @@ __pycache__/
 # npm 安装日志
 tools/install.log
 tools/*.log
+
+# 示例图（README 用，需入库）
+!examples/
+!examples/*.png

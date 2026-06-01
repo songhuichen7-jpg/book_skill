@@ -62,6 +62,7 @@
 ```bash
 # 1) 放进你的 agent 的 skills 目录（Claude Code 为例）
 git clone https://github.com/songhuichen7-jpg/book_skill ~/.claude/skills/book
+# Codex 可放到 ~/.codex/skills/book
 
 # 2) （可选，仅用 Mermaid 功能图时）装 mermaid-cli
 cd ~/.claude/skills/book/tools && npm install @mermaid-js/mermaid-cli

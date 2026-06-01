@@ -8,6 +8,24 @@
 
 ---
 
+## 效果示例 / Examples
+
+> 以下为用本 skill 生成的一本示例书的真实页面。
+
+| 封面 | 章节扉页（黑白连线插画 + 衬线大标题） |
+|:--:|:--:|
+| <img src="examples/cover.png" width="100%"> | <img src="examples/divider.png" width="100%"> |
+
+**每章一张彩色手绘信息图**（手账 / sketchnote 风，纯白底，中文标签准确，各章不同）：
+
+<img src="examples/infographic-iceberg.png" width="49%"> <img src="examples/infographic-setup.png" width="49%">
+
+**排版正文页**（横版、双栏正文、跨页嵌入彩色信息图）：
+
+<img src="examples/page.png" width="70%">
+
+---
+
 ## 它能产出什么
 
 - 📕 **封面**：整版主色 + 衬线大标题（或调外部封面 skill 做精美封面）

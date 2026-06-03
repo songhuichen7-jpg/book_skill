@@ -49,10 +49,15 @@ def main():
             print(f"[{name}] generating (try {attempt}/3) ...", flush=True)
             before = list_pngs()      # 生成前快照
             try:
-                subprocess.run(["codex", "exec", "--skip-git-repo-check", prompt],
-                               cwd="/tmp", capture_output=True, text=True, timeout=720)
+                proc = subprocess.run(["codex", "exec", "--skip-git-repo-check", prompt],
+                                      cwd="/tmp", capture_output=True, text=True, timeout=720)
             except Exception as e:
                 print(f"[{name}] codex error/timeout (try {attempt}): {e}", flush=True)
+                continue
+            if proc.returncode != 0:
+                # 暴露 codex 自己的报错（如 config.toml 的 service_tier 不被当前 CLI 接受、未登录）
+                err = (proc.stderr or proc.stdout or "").strip().splitlines()
+                print(f"[{name}] codex 退出码 {proc.returncode}：{err[0] if err else '(no stderr)'}", flush=True)
                 continue
             new = list_pngs() - before  # 只认这次新增的图；没新增=本次未产出，重试
             if not new:
